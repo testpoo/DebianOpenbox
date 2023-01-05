@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+
+<menu id="root-menu" label="Openbox 3">
+  <item label="  终端" icon="/home/poo/.local/share/icons/Reversal-blue/apps/scalable/terminal.svg">
+    <action name="Execute"><execute>x-terminal-emulator</execute></action>
+  </item>
+  <item label="  浏览器" icon="/home/poo/.local/share/icons/Reversal-blue/apps/scalable/browser.svg">
+    <action name="Execute"><execute>x-www-browser</execute></action>
+  </item>
+  <item label="  文件" icon="/home/poo/.local/share/icons/Reversal-blue/apps/scalable/Thunar.svg">
+    <action name="Execute"><execute>Thunar</execute></action>
+  </item>
+  <!-- This requires the presence of the 'obamenu' package to work -->
+  <menu id="/Debian" />
+  <separator />
+  <item label="  配置OpenBox    " icon="/home/poo/.local/share/icons/Reversal-blue/apps/scalable/preferences-theme.svg">
+    <action name="Execute"><execute>obconf</execute></action>
+  </item>
+  <item label="  重置OpenBox" icon="/home/poo/.local/share/icons/Reversal-blue/apps/scalable/systemback.svg">
+    <action name="Reconfigure" />
+  </item>
+  <item label="  重启OpenBox" icon="/home/poo/.local/share/icons/Reversal-blue/actions/24/system-reboot.svg">
+    <action name="Restart" />
+  </item>
+  <item label="  退出OpenBox" icon="/home/poo/.local/share/icons/Reversal-blue/actions/24/system-shutdown.svg">
+    <action name="Exit" />
+  </item>
+  <separator />
+  <item label="  锁屏" icon="/home/poo/.local/share/icons/Reversal-blue/apps/scalable/system-lock-screen.svg">
+    <action name="Execute"><execute>slock</execute></action>
+  </item>
+  <item label="  挂起" icon="/home/poo/.local/share/icons/Reversal-blue/actions/24/system-suspend.svg">
+    <action name="Execute"><execute>systemctl -i suspend</execute></action>
+  </item>
+  <item label="  休眼" icon="/home/poo/.local/share/icons/Reversal-blue/actions/24/system-suspend-hibernate.svg">
+    <action name="Execute"><execute>systemctl -i hibernate</execute></action>
+  </item>
+  <item label="  重启" icon="/home/poo/.local/share/icons/Reversal-blue/actions/24/system-reboot.svg">
+    <action name="Execute"><execute>systemctl -i reboot</execute></action>
+  </item>
+  <item label="  关机" icon="/home/poo/.local/share/icons/Reversal-blue/actions/24/system-shutdown.svg">
+    <action name="Execute"><execute>systemctl -i poweroff</execute></action>
+  </item>
+</menu>
+</menu>
+
+</openbox_menu>
