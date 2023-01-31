@@ -363,11 +363,6 @@
         <execute>light -U 5</execute>
       </action>
     </keybind>
-    <keybind key="W-s">
-      <action name="Execute">
-        <execute>rofi -show drun</execute>
-      </action>
-    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>

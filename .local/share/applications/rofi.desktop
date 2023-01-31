@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name[zh_CN]=Rofi
-Exec=rofi -show drun
-Terminal=false
-Type=Application
-Icon=distributor-logo-windows
-StartupNotify=false
