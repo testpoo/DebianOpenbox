@@ -1,0 +1,9 @@
+^sep()
+退出,^checkout(exit),system-shutdown
+^tag(exit)
+锁屏,slock,system-lock-screen
+退出,openbox --exit,system-log-out
+挂起,systemctl -i suspend,system-log-out
+休眠,systemctl -i hibernate,system-hibernate
+重启,systemctl -i reboot,system-reboot
+关机,systemctl -i poweroff,system-shutdown

@@ -4,9 +4,8 @@
 # config
 applications_dirs = ("/usr/share/applications", )
 icon_Theme = ["/usr/share/icons/Papirus-Light/24x24/apps/",'/usr/share/icons/Papirus-Light/24x24/devices/','/usr/share/icons/Papirus-Light/24x24/actions/','/usr/share/icons/Papirus/22x22/apps/applications-']
-categories_zh = {"Settings":"设置","System":"系统","Graphics":"图形","Development":"开发","Utilities":"实用工具","Internet":"互联网","Office":"办公"}
-alias = {"Utility":"Utilities","Network":"Internet"}
-removeCats = ["XFCE","GTK","Core","X-XFCE-SettingsDialog","X-XFCE-PersonalSettings","X-LXDE-Settings","Archiving", "Compression","TerminalEmulator","FileTools","WebBrowser","TextEditor","FileManager","DesktopSettings"]
+alias = {"Audio":"Multimedia","AudioVideo":"Multimedia","Network":"Internet","Game":"Games", "Utility":"Utilities", "GTK":"",  "GNOME":""}
+categories = {"Office":"办公",  "Development":"开发",  "Graphics":"图形", "Internet":"互联网",  "Games":"游戏", "System":"系统",  "Multimedia":"多媒体",  "Utilities":"实用工具",  "Settings":"设置"}
 ignoreList = ("python3.11", "feh", "pcmanfm-desktop-pref", "org.xfce.mousepad-settings")
 apps = (("终端", "terminal", "x-terminal-emulator"),("浏览器", "browser", "x-www-browser"),("文件", "system-file-manager", "pcmanfm"))
 closes = (("锁屏", "system-lock-screen", "slock"),("挂起", "system-log-out", "systemctl -i suspend",),("休眼", "system-hibernate", "systemctl -i hibernate"),("重启", "system-reboot", "systemctl -i reboot"),("关机", "system-shutdown", "systemctl -i poweroff"))
@@ -79,7 +78,7 @@ def process_dtfile(dtf,  catDict):
       this.addCategories(dtCats)
   if len(this.Categories) > 0:
     for cat in this.Categories:
-      if cat not in removeCats:
+      if cat in categories:
         if cat in alias:
           cat = alias[cat]
         if cat in catDict:
@@ -115,8 +114,8 @@ if __name__ == "__main__":
   for key in categoryDict:
     if categoryDict[key] == []:
       continue
-    if key in categories_zh:
-      catStr = "<menu id=\"openbox-%s\" label=\"%s\" " % (key, categories_zh[key])
+    if key in categories:
+      catStr = "<menu id=\"openbox-%s\" label=\"%s\" " % (key, categories[key])
     else:
       catStr = "<menu id=\"openbox-%s\" label=\"%s\" " % (key, key)
     tmp = getCatIcon(key)

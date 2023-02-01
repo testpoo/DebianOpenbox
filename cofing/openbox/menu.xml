@@ -5,5 +5,20 @@
         xsi:schemaLocation="http://openbox.org/
                 file:///usr/share/openbox/menu.xsd">
 
-<menu id="root-menu" label="Openbox 3" execute="/home/poo/.poo/obamenu.py">
+<menu id="root-menu" label="Openbox 3">
+  <item label="配置OpenBox    " icon="/usr/share/icons/Papirus-Light/24x24/apps/preferences-theme.svg">
+    <action name="Execute"><execute>obconf</execute></action>
+  </item>
+  <item label="重置OpenBox" icon="/usr/share/icons/Papirus-Light/24x24/apps/systemback.svg">
+    <action name="Reconfigure" />
+  </item>
+  <item label="重启OpenBox" icon="/usr/share/icons/Papirus-Light/24x24/apps/system-reboot.svg">
+    <action name="Restart" />
+  </item>
+  <separator />
+  <item label="退出OpenBox" icon="/usr/share/icons/Papirus-Light/24x24/apps/system-shutdown.svg">
+    <action name="Exit" />
+  </item>
+</menu>
+
 </openbox_menu>
