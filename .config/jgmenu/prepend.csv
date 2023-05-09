@@ -3,5 +3,5 @@
 ^sep()
 终端,x-terminal-emulator,utilities-terminal
 文件,pcmanfm,system-file-manager
-浏览器,chromium,chromium
+浏览器,env MOZ_GTK_TITLEBAR_DECORATION=client firefox-esr,firefox-esr
 ^sep()
