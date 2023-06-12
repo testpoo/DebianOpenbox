@@ -14,7 +14,7 @@ echo -e '\033[31m发型版:\033[0m' $(lsb_release -si |grep -v "^No LSB modules 
 echo -e '\033[31m核心版本:\033[0m' $(uname -r)
 echo -e '\033[31m处理器:\033[0m'$(cat /proc/cpuinfo |grep "model name" |cut -f2 -d: |head -n 1) $(cat /proc/cpuinfo |grep "physical id"|uniq |wc -l)'C' $(grep 'core id' /proc/cpuinfo | sort -u |wc -l)'核' $(grep 'processor' /proc/cpuinfo |wc -l)'线程'
 echo -e '\033[31m内存:\033[0m' $(cat /proc/meminfo |grep "MemTotal" |cut -f2 -d:|awk -F' ' '{print int($1)}' |awk '{printf "%.1f",$1/1024/1024}') 'GB'
-echo -e '\033[31mGPU:\033[0m' $(lspci |grep -i vga | awk -F' VGA compatible controller: ' '{print $1,$2}')
+echo -e '\033[31mGPU:\033[0m' $(lspci |grep -i vga | awk -F'00:02.0 VGA compatible controller: ' '{print $1,$2}')
 echo -e '\033[31m主板:\033[0m' $(cat /sys/devices/virtual/dmi/id/board_vendor) $(cat /sys/devices/virtual/dmi/id/board_name)
 echo -e '\033[31mGTK-THEME:\033[0m' $(cat $HOME/.config/gtk-3.0/settings.ini |grep "gtk-theme-name" |cut -f2 -d: | awk -F= '{print $2}')
 echo -e '\033[31mGTK-ICON:\033[0m' $(cat $HOME/.config/gtk-3.0/settings.ini |grep "gtk-icon-theme-name" |cut -f2 -d: | awk -F= '{print $2}')
