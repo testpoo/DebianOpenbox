@@ -5,6 +5,6 @@ import os
 network = os.popen('hostname -I').read()
 
 if network == '\n':
-    print('⚠ Down')
+    print(' ⚠')
 else:
-    print('📶 Nokia')
+    print(' 📶')
