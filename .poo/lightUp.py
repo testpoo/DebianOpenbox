@@ -14,7 +14,7 @@ ght = tk.Label(root)
 light = round(float(os.popen('light').read().replace('\n',''))) + 5
 if light > 100:
 	light = 100
-name = tk.Label(root, text='🌕', bg='#101616', fg='#fff', font=('Segoe UI Emoji',16))
+name = tk.Label(root, text='☀', bg='#101616', fg='#fff', font=('',16))
 os.system('light -A 5')
 value = tk.Label(root, text=light, bg='#101616', fg='#fff')
 name.place(x=15,y=20,width=35, height=30)

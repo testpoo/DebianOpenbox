@@ -19,10 +19,10 @@ if volume == ' / -':
 else:
 	volume = int(volume.replace('%',''))
 if mute == '否':
-	volumeText = '📣'
+	volumeText = '🔔'
 else:
 	volumeText = '🔇'
-name = tk.Label(root, text=volumeText, bg='#101616', fg='#fff', font=('Segoe UI Emoji',16))
+name = tk.Label(root, text=volumeText, bg='#101616', fg='#fff', font=('',16))
 value = tk.Label(root, text=volume, bg='#101616', fg='#fff')
 name.place(x=15,y=20,width=35, height=30)
 volwidth = int(310*volume/100)

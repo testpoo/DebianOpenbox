@@ -31,7 +31,7 @@ def updateMute():
     os.system('pactl set-sink-mute @DEFAULT_SINK@ toggle')
     mute = os.popen('pactl get-sink-mute @DEFAULT_SINK@').read()[6]
     if mute == '否':
-        volumeName['text'] = '📣'
+        volumeName['text'] = '🔔'
     else:
         volumeName['text'] = '🔇'
 
@@ -39,20 +39,20 @@ def lossfocus(event=None):
     if event.widget == root:
         root.destroy()
 
-volumeName = tk.Button(root, text="📣", bg='#D5D5D5', relief='flat',font=('Segoe UI Emoji',16), command=updateMute)
+volumeName = tk.Button(root, bg='#D5D5D5', relief='flat',font=('',16), command=updateMute)
 mute = os.popen('pactl get-sink-mute @DEFAULT_SINK@').read()[6]
 if mute == '否':
-    volumeName['text'] = '📣'
+    volumeName['text'] = '🔔'
 else:
     volumeName['text'] = '🔇'
-volume = tk.Scale(root, from_=0, to=100, sliderlength=10, width=20,orient='horizontal',bg='#828282', showvalue=False, command=updateVolume)
+volume = tk.Scale(root, from_=0, to=100, sliderlength=10, width=20,orient='horizontal',bg='#101616', sliderrelief='flat', bd=0, showvalue=False, command=updateVolume)
 volume.set(volumeValue)
 volumeNum = tk.Label(root, text=volumeValue, bg='#D5D5D5')
 volumeName.place(x=10,y=10,width=30,height=30)
 volume.place(x=50,y=18,width=300,height=14)
 volumeNum.place(x=360,y=10,width=30,height=30)
-lightName = tk.Label(root, text="🌕", font=('Segoe UI Emoji',16),bg='#D5D5D5')
-light = tk.Scale(root, from_=0, to=100, sliderlength=10,width=20, orient='horizontal',bg='#828282', showvalue=False, command=updateLight)
+lightName = tk.Label(root, text="☀", font=('',16),bg='#D5D5D5')
+light = tk.Scale(root, from_=0, to=100, sliderlength=10,width=20, orient='horizontal',bg='#101616', sliderrelief='flat', bd=0, showvalue=False, command=updateLight)
 light.set(lightValue)
 lightNum = tk.Label(root, text=lightValue,bg='#D5D5D5')
 lightName.place(x=10,y=50,width=30,height=30)

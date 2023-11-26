@@ -11,14 +11,19 @@ root.geometry('400x70-10-50')
 
 vol = tk.Label(root, bg='#717171')
 ume = tk.Label(root)
+mute = os.popen('pactl get-sink-mute @DEFAULT_SINK@').read()[6]
 volume = os.popen('pactl get-sink-volume @DEFAULT_SINK@').read()[28:32]
-name = tk.Label(root, text='📣', bg='#101616', fg='#fff', font=('Segoe UI Emoji',16))
 if volume == ' / -':
 	volume = 0
 elif int(volume.replace('%','')) < 5:
 	volume = 0
 else:
 	volume = int(volume.replace('%','')) - 5
+if mute == '否':
+	volumeText = '🔔'
+else:
+	volumeText = '🔇'
+name = tk.Label(root, text=volumeText, bg='#101616', fg='#fff', font=('',16))
 os.system('pactl set-sink-volume @DEFAULT_SINK@' + ' ' + str(volume) + '%')
 value = tk.Label(root, text=volume, bg='#101616', fg='#fff')
 name.place(x=15,y=20,width=35, height=30)
